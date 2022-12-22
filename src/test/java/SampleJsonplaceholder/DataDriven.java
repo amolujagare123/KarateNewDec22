@@ -9,7 +9,7 @@ public class DataDriven {
     {
         return Karate.run("DataDriven")
                 .relativeTo(getClass())
-                .tags("postJob");
+                .tags("@csv");
 
     }
 }
