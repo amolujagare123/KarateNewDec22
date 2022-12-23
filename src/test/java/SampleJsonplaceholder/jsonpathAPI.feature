@@ -6,5 +6,10 @@ Feature: check Json Path API
     When method get
     And print response
     Then status 200
-    * def jobTitle = karate.jasonPath(response,"$.[?(@.jobId==9)].jobTitle")
-    * print 'jobTitle==>'
+    * def jobTitle = karate.jsonPath(response,"$.[?(@.jobId==1)].jobTitle")
+    * def jobDescription = karate.jsonPath(response,"$.[?(@.jobId==1)].jobDescription")
+    * def experience = karate.jsonPath(response,"$.[?(@.jobId==1)].experience")
+    * print 'jobTitle==>' , jobTitle
+    * print 'jobDescription==>' , jobDescription
+    * print 'experience==>' , experience
+    And match jobTitle[0] == "Software Engg"

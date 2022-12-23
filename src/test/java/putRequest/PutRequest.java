@@ -1,15 +1,14 @@
-package SampleJsonplaceholder;
+package putRequest;
 
 import com.intuit.karate.junit5.Karate;
 
-public class DataDriven {
+public class PutRequest {
 
     @Karate.Test
     public Karate runner()
     {
         return Karate.run("PutRequest")
-                .relativeTo(getClass())
-                .tags("@csv");
+                .relativeTo(getClass());
 
     }
 }
