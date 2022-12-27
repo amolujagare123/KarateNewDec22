@@ -1,4 +1,4 @@
-Feature:  data driven examples
+Feature:  Calling feature file
 
   Background: creating user ID
   #  * def randomNumber = function() {return Math.floor(Math.random() * 10);}
@@ -7,7 +7,12 @@ Feature:  data driven examples
 
   Scenario: To check the AddJob Request with random number as jobID
 
-    Given call read('PostRequest.feature')
+   # Given def featureFile = call read('PostRequest2.feature')
+    Given def featureFile = call read('PostRequest3.feature') { _userId: 2, _jobTitle: 'Another title' ,_jobDescription: 'Another Description'}
+
+    * print "Job Id : " ,  featureFile.userId
+    * print "Job Title : " ,  featureFile.jobTitle
+    * print "job Description : " ,  featureFile.jobDescription
 
     And path '/normal/webapi/update'
     And headers {accept :'application/json',Content-Type :'application/json'}

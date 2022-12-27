@@ -1,8 +1,10 @@
-Feature: Calling feature file
+Feature:  Calling feature file
 
   Background: creating user ID
-  #  * def randomNumber = function() {return Math.floor(Math.random() * 10);}
-  #  * def userId = randomNumber();
+   * def randomNumber = function() {return Math.floor(Math.random() * 10);}
+    * def userId = randomNumber()
+    * def jobTitle = 'Software Test Manager'
+    * def jobDescription = 'Automation Testing with karate'
     Given url 'http://localhost:9897'
 
   Scenario: To check the AddJob Request with random number as jobID
@@ -11,10 +13,10 @@ Feature: Calling feature file
     And headers {accept :'application/json',Content-Type :'application/json'}
     And request
     """
-     {
-    "jobId": 6,
-    "jobTitle": 'Software Test engineer',
-    "jobDescription": "Automation Testing",
+  {
+  "jobId": '#(userId)',
+  "jobTitle": '#(jobTitle)',
+  "jobDescription": '#(jobDescription)' ,
     "experience": [
       "Google",
       "Apple",
