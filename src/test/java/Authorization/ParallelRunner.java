@@ -13,8 +13,12 @@ public class ParallelRunner {
     @Karate.Test
     public Karate runner()
     {
-        return Karate.run("JobPortal")
+        return Karate.run("JobPortal",
+                        "Chatserver1",
+                        "Chatserver2",
+                        "JobPortalGetRequests")
                 .relativeTo(getClass())
+                .tags("@queryParam")
                ;
 
     }

@@ -7,8 +7,8 @@ Feature:  All Post requests from Job portal
     And request
     """
      {
-    "jobId": 2,
-    "jobTitle": "Software Developer",
+    "jobId": 4,
+    "jobTitle": "Software Developer - 4",
     "jobDescription": "To develop Java application",
     "experience": [
       "Google",
