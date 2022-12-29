@@ -1,10 +1,16 @@
 package parallelExecution;
 
+
 import com.intuit.karate.Results;
 import com.intuit.karate.junit5.Karate;
 import com.intuit.karate.Runner.Builder;
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.List;
 
 
 public class ParallelRunner {
@@ -25,4 +31,15 @@ public class ParallelRunner {
         Assertions.assertEquals(0,result.getFailCount(),
                 "some scenarios are failed");
     }
+
+   /* void createReport(String reportPath)
+    {
+        File reportDirectory = new File(reportPath);
+
+        String[] fileTypes = {"txt"};
+        Collection<File> fileSets = FileUtils.listFiles(reportDirectory,fileTypes,true);
+
+        List jsonFiles =
+
+    }*/
 }
